@@ -1,21 +1,20 @@
 const UsersSkeleton = () => {
   return (
     <>
-      <div className="bg-white p-6 pt-12 rounded-lg shadow-lg min-h-[600px]">
-        <div className="flex justify-between items-center mb-4">
-          <div className="h-6 w-32 bg-gray-300 rounded animate-pulse"></div>
-          <div className="flex gap-4">
-            <div className="h-10 w-40 bg-gray-300 rounded animate-pulse"></div>
-            <div className="h-10 w-24 bg-gray-300 rounded animate-pulse"></div>
-          </div>
+      <div className="bg-white p-2 flex justify-between items-center mb-[5rem]">
+        <div className="h-6 w-32 bg-gray-300 rounded animate-pulse"></div>
+        <div className="flex gap-4">
+          <div className="h-10 w-40 bg-gray-300 rounded animate-pulse"></div>
+          <div className="h-10 w-24 bg-gray-300 rounded animate-pulse"></div>
         </div>
-
-        <div className="flex gap-4 mb-4">
+      </div>
+      <div className="bg-white p-2 rounded-lg shadow-lg min-h-[600px] px-8">
+        <div className="flex gap-4 mb-4 px-8">
           <div className="h-10 w-24 bg-gray-300 rounded animate-pulse"></div>
           <div className="h-10 w-24 bg-gray-300 rounded animate-pulse"></div>
         </div>
 
-        <div className="border rounded-lg overflow-hidden">
+        <div className="border rounded-lg overflow-hidden ">
           <table className="w-full">
             <thead>
               <tr className="bg-gray-200">
@@ -52,7 +51,10 @@ const UsersSkeleton = () => {
 
       <div className="flex justify-end mt-4 gap-2 mr-3">
         {Array.from({ length: 3 }).map((_, i) => (
-          <div key={i} className="h-8 w-8 bg-gray-300 rounded animate-pulse"></div>
+          <div
+            key={i}
+            className="h-8 w-8 bg-gray-300 rounded animate-pulse"
+          ></div>
         ))}
       </div>
     </>

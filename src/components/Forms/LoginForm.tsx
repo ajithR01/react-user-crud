@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema, LoginSchemaType } from "../../schemas/loginSchema";
+import { loginSchema } from "../../schemas/loginSchema";
 import FormInput from "../Inputs/FormInput";
 import { Button, Box, Typography } from "@mui/material";
 import { useLoginUserMutation } from "../../redux/api/authApi";
@@ -9,25 +9,26 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setAuth } from "../../redux/slices/authSlice";
 import { toast } from "react-toastify";
+import { Login } from "../../types/login";
 
 const LoginForm: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [login, { isLoading }] = useLoginUserMutation();
 
-  const { control, handleSubmit } = useForm<LoginSchemaType>({
+  const { control, handleSubmit } = useForm<Login>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       username: "eve.holt@reqres.in",
       password: "cityslicka",
-    },
+    } as Login,
   });
 
   const notify = (message: string, type: "success" | "error" = "success") => {
     type === "success" ? toast.success(message) : toast.error(message);
   };
 
-  const onSubmit = async (data: LoginSchemaType) => {
+  const onSubmit = async (data: Login) => {
     try {
       const res = await login(data).unwrap();
 
