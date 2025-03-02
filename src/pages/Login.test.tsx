@@ -1,8 +1,8 @@
 // import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { useLoginUserMutation } from "../redux/api/authApi"; // Adjust the import path as needed
-import Login from "./Login"; // Adjust the path to your Login component
+import { useLoginUserMutation } from "../redux/api/authApi";
+import Login from "./Login";
 
 jest.mock("../redux/api/authApi", () => ({
   useLoginUserMutation: jest.fn(),

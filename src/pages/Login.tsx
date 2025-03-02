@@ -11,7 +11,7 @@ const Login: React.FC = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "100vh", // Full height of the viewport
+          height: "100vh",
         }}
       >
         <LoginForm />
